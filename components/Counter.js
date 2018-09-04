@@ -23,5 +23,37 @@ var Counter = React.createClass({
 			React.createElement('button', {onClick: this.increment, className: 'btn btn-dark'}, 'plus'),
 			React.createElement('button', {onClick: this.decrement, className: 'btn btn-dark'}, 'minus')
         );
-    }
+    },
+	getDefaultProps() {
+       console.log('Metoda getDefaultProps ustawia domyśle wartości propsów, jeśli nie zostały zdefiniowane');
+    },
+	
+	componentWillMount() {
+		console.log('Metoda componentWillMount przygotowywuje komponent do renderowania')
+	},
+	
+	componentDidMount() {
+		console.log('Metoda componentDidMount jest wywoływana, gdy komponent widnieje już na stronie i możemy wykonywać na nim operacje')
+	},
+	
+	componentWillReceiveProps() {
+		console.log('Metoda componentWillReceiveProps jest wywoływana, gdy komponent ma zostać zaktualizowany na podstawie nowych właściwości')
+	},
+	
+	shouldComponentUpdate() {
+		return true;
+		console.log('Metoda shouldComponentUpdate sprawdza czy komponent faktycznie dostaje nowe właściwości')
+	},
+	
+	componentWillUpdate() {
+		console.log('Metoda componentWillUpdate przygotowywuje komponent do aktualizacji')
+	},
+	
+	componentDidUpdate() {
+		console.log('Metoda componentDidUpdate aktualizuje komponent')
+	},
+	
+	componentWillUnmount() {
+		console.log('Metoda componentWillUnmount usuwa pozostałości po niepotrzebnym komponencie')
+	},
 });
